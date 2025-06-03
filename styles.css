@@ -504,6 +504,15 @@ li {
   height: 500px;
 }
 
+
+.cls-1 {
+  stroke: var(--text);
+}
+
+.cls-2{
+  fill: var(--text)
+}
+
 /* Responsive Styles */
 
 @media (max-width: 361px) {
