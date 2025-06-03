@@ -87,12 +87,38 @@ ul {
   font-weight: 900;
 }
 
+.logo-footer{
+  position: relative;
+  height: 60px;
+  width: 100%;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+
+
+}
+
+.logo-footer svg {
+
+  height: 30px;
+  width: 282px;
+  fill: var(--text);
+}
+
 .logo a {
   font-family: Garute;
    letter-spacing: 10px;
   font-size: 1.1rem;
   text-decoration: none;
   color: var(--text);
+  fill: var(--text);
+}
+
+ div.logo svg {
+  width: 282px;
+  height: 30px;
+  fill: var(--text);
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -217,8 +243,10 @@ h1,h2,h3,h4,h5,h6 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 3rem 1rem;
+  
   max-width: 1520px;
   margin-top: 25px;
+  flex-wrap: wrap;
   
 }
 
@@ -589,7 +617,7 @@ li {
 .media-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 2rem;
-    max-width: 100%;
+    max-width: 80%;
   }
 
   .media-section {
