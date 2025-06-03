@@ -216,7 +216,7 @@ h1,h2,h3,h4,h5,h6 {
 .media-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem 1rem;
+  gap: 3rem 1rem;
   max-width: 1520px;
   margin-top: 25px;
   
@@ -229,6 +229,7 @@ h1,h2,h3,h4,h5,h6 {
 .media-image {
 width: 300px;
 object-fit: cover;
+border-radius: 15px;
 }
 
 .media-video {
