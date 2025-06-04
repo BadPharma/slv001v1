@@ -36,6 +36,24 @@ function setupNavScrollHighlight() {
   });
 }
 
+
+  function shuffleGrid() {
+    const grid = document.getElementById("photo-grid");
+    const items = Array.from(grid.children);
+    
+    // Fisher-Yates shuffle
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+
+    // Clear and re-append in shuffled order
+    items.forEach(item => grid.appendChild(item));
+  }
+
+  window.addEventListener("DOMContentLoaded", shuffleGrid);
+
+
 // === Scroll Reveal Animation ===
 function setupScrollReveal() {
   const observer = new IntersectionObserver((entries) => {
