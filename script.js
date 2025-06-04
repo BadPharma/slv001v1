@@ -139,7 +139,7 @@ function setupPhotographyFilter() {
         const category = item.getAttribute('data-category');
         const shouldShow = filter === 'all' || category === filter;
 
-        item.style.transitionDelay = `${index * 60}ms`;
+        item.style.transitionDelay = `${index * 6}ms`;
 
         if (shouldShow) {
           item.classList.remove('hidden');
