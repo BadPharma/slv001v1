@@ -121,6 +121,12 @@ ul {
   fill: var(--text);
 }
 
+#theme-toggle svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--text);
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: Tallica;
   font-weight: Medium;
