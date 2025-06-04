@@ -151,7 +151,7 @@ function setupPhotographyFilter() {
           item.style.opacity = '0';
           setTimeout(() => {
             item.style.display = 'none';
-          }, 400);
+          }, 100);
         }
       });
     });
