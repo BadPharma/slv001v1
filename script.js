@@ -199,9 +199,16 @@ window.addEventListener('load', () => {
   }
 });
 
+const toggleBtn = document.querySelector('.menu-toggle');
+  const subNav = document.querySelector('.sub-nav');
+
+  toggleBtn.addEventListener('click', () => {
+    subNav.classList.toggle('open');
+  });
 
 
- setupThemeToggle();
+
+  setupThemeToggle();
   setupNavScrollHighlight();
   setupScrollReveal();
   setupHorizontalScroll();
