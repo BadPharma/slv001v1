@@ -12,6 +12,34 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Young Serif';
+  src: url('f/YoungSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('f/Aeonik-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('f/Aeonik-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('f/Aeonik-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
 :root {
   --bg: #ffffff;
   --text: #111111;
@@ -85,6 +113,7 @@ ul {
   text-decoration: none;
   color: var(--text);
   font-weight: 900;
+  font-family: Aeonik;;
 }
 
 .logo-footer{
@@ -107,7 +136,7 @@ ul {
 }
 
 .logo a {
-  font-family: Garute;
+  
    letter-spacing: 10px;
   font-size: 1.1rem;
   text-decoration: none;
@@ -127,10 +156,14 @@ ul {
   fill: var(--text);
 }
 
+#theme-toggle:hover svg {
+  fill: var(--bg);
+}
+
 h1,h2,h3,h4,h5,h6 {
-  font-family: Tallica;
-  font-weight: Medium;
-  letter-spacing: 10px;
+  font-family: Aeonik;
+  font-weight:900;
+  letter-spacing: 2px;
 }
 
 #theme-toggle {
@@ -254,8 +287,12 @@ h1,h2,h3,h4,h5,h6 {
   margin-top: 25px;
   flex-wrap: wrap;
   
+  
 }
 
+#photo-grid {
+align-items: center;
+}
 
   #videography > .media-grid, #content > .media-grid {
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
@@ -298,8 +335,9 @@ object-fit: cover;
 
 #director h3, #creative h3, #content h3, #videography h3, .media-grid h3 {
   margin-bottom: 5px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 2px;
+  font-weight: 500;
 }
 
 .media-item {
@@ -386,7 +424,7 @@ object-fit: cover;
   display: flex;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  font-size: 0.80rem;
   font-weight: 500;
   align-items: center;
   text-align: center;
@@ -394,6 +432,7 @@ object-fit: cover;
 }
 
 .sub-nav a {
+  font-family: Aeonik;
   text-decoration: none;
   color: var(--accent);
   border-bottom: 1px solid transparent;
