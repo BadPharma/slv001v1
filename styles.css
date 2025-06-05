@@ -288,12 +288,12 @@ h1,h2,h3,h4,h5,h6 {
   flex-wrap: wrap;  
 }
 
-  .menu-toggle {
+.menu-toggle {
   display: none;
-  background: none;
+ background: none;
   font-size: 1rem;
   color: var(--text);
-  all: unset;
+  
 }
 
 
@@ -748,6 +748,7 @@ li {
   .menu-toggle {
     display: block;
     margin-bottom: 0.5rem;
+    all: unset;
   }
 
   #director, #creative, #photography, #videography, #content {

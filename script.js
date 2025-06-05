@@ -99,10 +99,16 @@ function setupSmoothScrollWithOffset() {
       const navbarHeight = getNavbarHeight();
 
       if (targetId === 'contact') {
-        // Show contact section and vertical scroll
-        contactSection.style.display = 'flex';
-        const y = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        // If contact section is already visible, hide it (toggle off)
+        const isVisible = contactSection.style.display === 'flex';
+        if (isVisible) {
+          contactSection.style.display = 'none';
+        } else {
+          // Show contact section and scroll to it
+          contactSection.style.display = 'flex';
+          const y = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
       } else {
         // Hide contact, scroll horizontally
         contactSection.style.display = 'none';
@@ -118,6 +124,7 @@ function setupSmoothScrollWithOffset() {
     });
   });
 }
+
 
 
 
