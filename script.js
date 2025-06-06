@@ -4,12 +4,35 @@ document.addEventListener('DOMContentLoaded', () => {
 // === Theme Toggle ===
 function setupThemeToggle() {
   const themeToggle = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+
+  // Check localStorage or use system preference
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme) {
+    root.setAttribute('data-theme', savedTheme);
+  } else {
+    root.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+  }
+
   if (!themeToggle) return;
 
   themeToggle.addEventListener('click', () => {
-    const root = document.documentElement;
-    const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    const currentTheme = root.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
+
+
+const toggleBtn = document.querySelector('.menu-toggle');
+  const subNav = document.querySelector('.sub-nav');
+
+  if(toggleBtn && subNav) {
+  toggleBtn.addEventListener('click', () => {
+    subNav.classList.toggle('open');
   });
 }
 
@@ -37,19 +60,21 @@ function setupNavScrollHighlight() {
 }
 
 
-  function shuffleGrid() {
-    const grid = document.getElementById("photo-grid");
-    const items = Array.from(grid.children);
-    
-    // Fisher-Yates shuffle
-    for (let i = items.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [items[i], items[j]] = [items[j], items[i]];
-    }
+function shuffleGrid() {
+  const grid = document.getElementById("photo-grid");
+  if (!grid) return; // Safely exit if the grid is not found
 
-    // Clear and re-append in shuffled order
-    items.forEach(item => grid.appendChild(item));
+  const items = Array.from(grid.children);
+
+  // Fisher-Yates shuffle
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
   }
+
+  items.forEach(item => grid.appendChild(item));
+}
+
 
   window.addEventListener("DOMContentLoaded", shuffleGrid);
 
@@ -206,12 +231,7 @@ window.addEventListener('load', () => {
   }
 });
 
-const toggleBtn = document.querySelector('.menu-toggle');
-  const subNav = document.querySelector('.sub-nav');
 
-  toggleBtn.addEventListener('click', () => {
-    subNav.classList.toggle('open');
-  });
 
 
 
