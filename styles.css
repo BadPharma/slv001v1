@@ -626,6 +626,14 @@ li {
     
   }
 
+  .hero-video {
+  position: absolute;
+  width: 90%;
+  height: 40%;
+  object-fit: cover;
+  border: none;
+}
+
   #photography h2 {
   
     margin-bottom: 1rem;
