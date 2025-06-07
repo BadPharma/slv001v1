@@ -210,7 +210,7 @@ function setupPhotoModal() {
   });
 
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.style.display = 'none';
+    if (e.target != modal) modal.style.display = 'none';
   });
 }
 
